@@ -6,7 +6,7 @@ Release:	1
 License:	OPEN DATA LICENSE (see LICENSE.txt)
 Group:		Applications/Databases
 Source0:	http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-# Source0-md5:	ce03b15a08e26c88ec2fd8f5c08f8e4b
+# Source0-md5:	04b160944385f4d5989bedef89124a9d
 Source1:	http://www.maxmind.com/download/geoip/database/LICENSE.txt
 # Source1-md5:	8c0bc6e8ebe6ec3bc1580021edb4bba1
 URL:		http://www.maxmind.com/app/geolitecity
