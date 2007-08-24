@@ -1,4 +1,5 @@
 Summary:	GeoLite City - City database for GeoIP
+Summary(pl.UTF-8):	GeoLite City - baza danych miast dla GeoIP
 Name:		GeoIP-db-City
 # Updated every month:
 Version:	2007.08.01
@@ -10,8 +11,8 @@ Source0:	http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 Source1:	http://www.maxmind.com/download/geoip/database/LICENSE.txt
 # Source1-md5:	8c0bc6e8ebe6ec3bc1580021edb4bba1
 URL:		http://www.maxmind.com/app/geolitecity
-BuildArch:	noarch
 Requires:	GeoIP-libs
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,13 +22,26 @@ database that is accurate as of March 2003. This database simply
 contains IP blocks as keys, and countries as values. This database
 should be more complete and accurate than using reverse DNS lookups.
 
-GeoLite City is similar to the GeoIP City database, but is not as accurate.
-Should you require greater accuracy, GeoIP City is a drop-in replacement
-for GeoLite City.
+GeoLite City is similar to the GeoIP City database, but is not as
+accurate. Should you require greater accuracy, GeoIP City is a drop-in
+replacement for GeoLite City.
 
-License disclaimer:
-This product includes GeoLite data created by MaxMind, available from
-http://www.maxmind.com/.
+License disclaimer: this product includes GeoLite data created by
+MaxMind, available from <http://www.maxmind.com/>.
+
+%description -l pl.UTF-8
+GeoIP jest biblioteką napisaną w C umożliwiającą użytkownikowi
+odnalezienie państwa, z którego pochodzi dany adres IP lub domena.
+Używa do tego zapisanej w pliku bazy danych (z marca 2003). W bazie
+tej adresy IP są kluczami, a państwa wartościami. Powinna ona być
+dokładniejsza niż sprawdzanie odwrotnego DNS. 
+
+GeoLite City jest podobna do bazy danych GeoIP City, ale nie jest tak
+dokładna. Jeśli wymagana jest większa dokładność, GeoIP City jest
+zamiennikiem GeoLite City.
+
+Informacja licencyjna: ten produkt zawiera dane GeoLite stworzone
+przez MaxWind, dostępne z <http://www.maxwind.com/>.
 
 %prep
 %setup -q -c -T
