@@ -2,12 +2,12 @@ Summary:	GeoLite City - City database for GeoIP
 Summary(pl.UTF-8):	GeoLite City - baza danych miast dla GeoIP
 Name:		GeoIP-db-City
 # Updated every month:
-Version:	2009.08.01
+Version:	2009.09.02
 Release:	1
 License:	OPEN DATA LICENSE (see LICENSE.txt)
 Group:		Applications/Databases
 Source0:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-# Source0-md5:	7cecaf088c9f37a3b931962c781bdd10
+# Source0-md5:	82cc8df972540aa90865a1ac13346709
 Source1:	http://www.maxmind.com/download/geoip/database/LICENSE.txt
 # Source1-md5:	a1381bd1aa0a0c91dc31b3f1e847cf4a
 URL:		http://www.maxmind.com/app/geolitecity
@@ -16,29 +16,17 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GeoIP is a C library that enables the user to find the country that
-any IP address or hostname originates from. It uses a file based
-database that is accurate as of March 2003. This database simply
-contains IP blocks as keys, and countries as values. This database
-should be more complete and accurate than using reverse DNS lookups.
-
-GeoLite City is similar to the GeoIP City database, but is not as
-accurate. Should you require greater accuracy, GeoIP City is a drop-in
-replacement for GeoLite City.
+Determine country, state/region, city, US postal code, US area code,
+metro code, latitude, and longitude information for IP addresses
+worldwide.
 
 License disclaimer: this product includes GeoLite data created by
 MaxMind, available from <http://www.maxmind.com/>.
 
 %description -l pl.UTF-8
-GeoIP jest biblioteką napisaną w C umożliwiającą użytkownikowi
-odnalezienie państwa, z którego pochodzi dany adres IP lub domena.
-Używa do tego zapisanej w pliku bazy danych (z marca 2003). W bazie
-tej adresy IP są kluczami, a państwa wartościami. Powinna ona być
-dokładniejsza niż sprawdzanie odwrotnego DNS. 
-
-GeoLite City jest podobna do bazy danych GeoIP City, ale nie jest tak
-dokładna. Jeśli wymagana jest większa dokładność, GeoIP City jest
-zamiennikiem GeoLite City.
+Znajdź państwo, stan/region, miasto, kod pocztowy, kod regionu, kod
+miejski, szerokość i wysokość geograficzną dla adresów IP z całego
+świata.
 
 Informacja licencyjna: ten produkt zawiera dane GeoLite stworzone
 przez MaxWind, dostępne z <http://www.maxwind.com/>.
@@ -55,6 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/GeoIP
 
 install GeoLiteCity.dat $RPM_BUILD_ROOT%{_datadir}/GeoIP
+ln -s   GeoLiteCity.dat $RPM_BUILD_ROOT%{_datadir}/GeoIP/GeoIPCity.dat
 
 %clean
 rm -rf $RPM_BUILD_ROOT
