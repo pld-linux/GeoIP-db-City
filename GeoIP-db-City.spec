@@ -37,7 +37,7 @@ cp -p %{SOURCE1} .
 
 gunzip GeoLiteCity.dat.gz
 
-ver=$(stat -c '%y' GeoLiteCity.dat | awk '{print $1}' | tr - .)
+ver=$(TZ=GMT stat -c '%y' GeoLiteCity.dat | awk '{print $1}' | tr - .)
 if [ "$ver" != %{version} ]; then
 	exit 1
 fi
