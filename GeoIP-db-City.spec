@@ -4,13 +4,13 @@ Name:		GeoIP-db-City
 # Updated every month:
 Version:	2013.12.06
 Release:	1
-License:	OPEN DATA LICENSE (see LICENSE.txt)
+License:	CC 3.0 BY-SA
 Group:		Applications/Databases
-Source0:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+Source0:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.xz
 # Source0-md5:	43fbfc1228eb7b9df54612c0762d56eb
-Source1:	http://www.maxmind.com/download/geoip/database/LICENSE.txt
-# Source1-md5:	a1381bd1aa0a0c91dc31b3f1e847cf4a
-URL:		http://www.maxmind.com/app/geolitecity
+URL:		http://dev.maxmind.com/geoip/legacy/geolite/
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,9 +33,8 @@ przez MaxWind, dostępne z <http://www.maxwind.com/>.
 %prep
 %setup -qcT
 cp -p %{SOURCE0} .
-cp -p %{SOURCE1} .
 
-gunzip GeoLiteCity.dat.gz
+xz -d GeoLiteCity.dat.xz
 
 ver=$(TZ=GMT stat -c '%y' GeoLiteCity.dat | awk '{print $1}' | tr - .)
 if [ "$ver" != %{version} ]; then
@@ -53,5 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt
 %{_datadir}/GeoIP/*.dat
