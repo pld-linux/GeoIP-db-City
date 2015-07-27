@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	GeoLite City - baza danych miast dla GeoIP
 Name:		GeoIP-db-City
 # Updated every month:
 Version:	2015.07.24
-Release:	1
+Release:	2
 License:	CC 3.0 BY-SA
 Group:		Applications/Databases
 Source0:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.xz?/GeoLiteCity-%{version}.dat.xz
@@ -40,7 +40,22 @@ cp -p %{SOURCE1} .
 xz -d GeoLiteCity-%{version}.dat.xz
 gunzip GeoLiteCityv6-%{version}.dat.gz
 
-ver=$(TZ=GMT stat -c '%y' GeoLiteCity-%{version}.dat | awk '{print $1}' | tr - .)
+%build
+# get file DATE in GMT timezone
+filedate() {
+	TZ=GMT stat -c '%y' "$1" | awk '{print $1}'
+}
+
+# use newest file date as version
+d1=$(filedate GeoLiteCity-%{version}.dat)
+d2=$(filedate GeoLiteCityv6-%{version}.dat)
+if [ "$(echo $d1 | tr -d -)" -gt "$(echo $d2 | tr -d -)" ]; then
+	d=$d1
+else
+	d=$d2
+fi
+
+ver=$(echo $d | tr - .)
 if [ "$ver" != %{version} ]; then
 	exit 1
 fi
