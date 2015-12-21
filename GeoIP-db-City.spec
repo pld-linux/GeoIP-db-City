@@ -7,9 +7,9 @@ Release:	1
 License:	CC 3.0 BY-SA
 Group:		Applications/Databases
 Source0:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.xz?/GeoLiteCity-%{version}.dat.xz
-# Source0-md5:	c5208771d1f57f53af8c4127b5f4923a
+# Source0-md5:	ddbb250977f2f5f9898a4466ebc51bef
 Source1:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz?/GeoLiteCityv6-%{version}.dat.gz
-# Source1-md5:	71334682ee312bcf211da82f06a23734
+# Source1-md5:	c3b00a1b43b2e3095b7a5537d2f05f05
 URL:		http://dev.maxmind.com/geoip/legacy/geolite/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
