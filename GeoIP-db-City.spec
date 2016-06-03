@@ -30,7 +30,7 @@ miejski, szerokość i wysokość geograficzną dla adresów IP z całego
 świata.
 
 Informacja licencyjna: ten produkt zawiera dane GeoLite stworzone
-przez MaxWind, dostępne z <http://www.maxwind.com/>.
+przez MaxMind, dostępne z <http://www.maxmind.com/>.
 
 %prep
 %setup -qcT
