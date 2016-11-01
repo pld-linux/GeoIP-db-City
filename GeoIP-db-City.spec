@@ -2,12 +2,12 @@ Summary:	GeoLite City - City database for GeoIP
 Summary(pl.UTF-8):	GeoLite City - baza danych miast dla GeoIP
 Name:		GeoIP-db-City
 # Updated every month:
-Version:	2016.10.31
+Version:	2016.11.01
 Release:	1
 License:	CC 3.0 BY-SA
 Group:		Applications/Databases
 Source0:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.xz?/GeoLiteCity-%{version}.dat.xz
-# Source0-md5:	b5756b048ecc680140bd2bbe9874cc96
+# Source0-md5:	5e0fec0d1205005c1714b47c9b7c66cb
 Source1:	http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz?/GeoLiteCityv6-%{version}.dat.gz
 # Source1-md5:	78c56505f04a31e499c8ee1c5dcabbaa
 URL:		http://dev.maxmind.com/geoip/legacy/geolite/
